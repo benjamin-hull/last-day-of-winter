@@ -1,0 +1,85 @@
+@import compass/css3
+@import vendor/bigvideo
+
+html
+  background: #333
+
+body
+  background: #333
+  color: #FFF
+  font-family: Raleway, sans-serif
+  padding: 0
+  margin: 0
+
+h1, h2, h3
+  font-weight: 200
+
+h1
+  font-size: 4.8em
+  margin: 0
+  letter-spacing: -0.02em
+
+  span
+    font-family: Codystar
+    font-size: 0.5em
+    display: block
+
+h2
+  +text-shadow((1px 1px 1px rgba(#FFF, 0.8)), (-1px -1px 1px rgba(#000, 0.3)))
+  font-family: Codystar
+  font-size: 4.2em
+  margin: 0 0 0.3em
+
+h3
+  font-size: 1.8em
+  font-weight: 700
+  margin: 0.3em 0 0.2em
+  text-transform: uppercase
+
+p, li
+  font-size: 1.2em
+  line-height: 1.5
+
+a
+  &:link
+    color: #A9E4F7
+    text-decoration: none
+    border-bottom: 1px dashed
+  &:visited
+    color: #ABB9F7
+  &:hover
+    color: #F7BD9B
+  &:active
+    color: #DCA88A
+
+.section
+  position: relative
+  z-index: 2
+  
+  &:nth-child(odd)
+    background: rgba(#000, 0.6)
+
+.content
+  width: 80%
+  max-width: 70em
+  margin: 0 auto
+  padding: 4em 0
+
+#big-video-wrap
+  z-index: 1
+
+
+#home
+  padding-top: 4em
+
+  h2
+    +text-shadow(none)
+    font-family: Raleway, sans-serif
+    font-size: 1.8em
+
+#about-the-event
+  background: #323131 image-url('grey-texture.png')
+
+#about-the-challenge
+  background: #6a6363 image-url('brown-texture.png')
+  //background: image-url('grass.jpg')

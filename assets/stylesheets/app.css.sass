@@ -2,10 +2,10 @@
 @import vendor/bigvideo
 
 html
-  background: #333
+  background: #111
 
 body
-  background: #333
+  background: #111
   color: #FFF
   font-family: Raleway, sans-serif
   padding: 0
@@ -60,14 +60,19 @@ a
     background: rgba(#000, 0.6)
 
 .content
-  width: 80%
+  width: 60%
   max-width: 70em
+  min-width: 320px
   margin: 0 auto
-  padding: 4em 0
+  padding: 4em 2em
+  position: relative
+  z-index: 1
 
 #big-video-wrap
   z-index: 1
 
+.decoration
+  z-index: 0
 
 #home
   padding-top: 4em
@@ -77,9 +82,64 @@ a
     font-family: Raleway, sans-serif
     font-size: 1.8em
 
+  .decoration
+    .a
+      position: absolute
+      left: 0
+      background: image-url('wiggles-top-left.png') no-repeat top left
+      height: 500px
+      width: 980px
+      top: -33%
+      z-index: 0
+
+    .b
+      position: absolute
+      right: -10%
+      background: image-url('shoes.png') no-repeat top left
+      width: 550px
+      height: 390px
+      top: -13%
+      z-index: 0
+
 #about-the-event
   background: #323131 image-url('grey-texture.png')
 
+  .content
+    background: #323131 image-url('grey-texture.png')
+
+  .decoration
+    position: absolute
+    right: 0
+    background: image-url('wheel.png') no-repeat bottom right
+    width: 500px
+    height: 980px
+    bottom: -33%
+
 #about-the-challenge
   background: #6a6363 image-url('brown-texture.png')
-  //background: image-url('grass.jpg')
+  
+  .content
+    background: #6a6363 image-url('brown-texture.png')
+
+  .decoration
+    position: absolute
+    background: image-url('corkscrew.png') no-repeat top right
+    width: 500px
+    height: 550px
+    bottom: -25% 
+    left: -18%
+
+#sponsors
+  background: #3e614e image-url('grass.jpg')
+
+#big-video-wrap
+  +opacity(0)
+  +transition(opacity, 2000ms)
+
+html.video-loaded
+  #big-video-wrap
+    +opacity(1)
+
+html.touch
+  #home
+    background: image-url('fire.jpg')

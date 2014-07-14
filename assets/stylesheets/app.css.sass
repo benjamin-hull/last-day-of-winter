@@ -1,5 +1,6 @@
 @import compass/css3
 @import vendor/bigvideo
+@import devices
 
 html
   background: #111
@@ -16,8 +17,10 @@ h1, h2, h3
 
 h1
   font-size: 4.8em
-  margin: 0
+  margin: 0 0 0.2em 0
   letter-spacing: -0.02em
+  line-height: 0.95
+
 
   span
     font-family: Codystar
@@ -35,6 +38,9 @@ h3
   font-weight: 700
   margin: 0.3em 0 0.2em
   text-transform: uppercase
+
+  a
+    text-transform: none
 
 p, li
   font-size: 1.2em
@@ -59,7 +65,12 @@ a
   &:nth-child(odd)
     background: rgba(#000, 0.6)
 
+  img
+    position: absolute
+    width: 18%
+
 .content
+  box-sizing: border-box
   width: 60%
   max-width: 70em
   min-width: 320px
@@ -77,60 +88,48 @@ a
 #home
   padding-top: 4em
 
+  .content
+    padding-right: 18%
+
   h2
     +text-shadow(none)
     font-family: Raleway, sans-serif
     font-size: 1.8em
 
-  .decoration
-    .a
-      position: absolute
-      left: 0
-      background: image-url('wiggles-top-left.png') no-repeat top left
-      height: 500px
-      width: 980px
-      top: -33%
-      z-index: 0
-
-    .b
-      position: absolute
-      right: -10%
-      background: image-url('shoes.png') no-repeat top left
-      width: 550px
-      height: 390px
-      top: -13%
-      z-index: 0
-
 #about-the-event
   background: #323131 image-url('grey-texture.png')
 
-  .content
-    background: #323131 image-url('grey-texture.png')
-
-  .decoration
-    position: absolute
-    right: 0
-    background: image-url('wheel.png') no-repeat bottom right
-    width: 500px
-    height: 980px
-    bottom: -33%
-
 #about-the-challenge
   background: #6a6363 image-url('brown-texture.png')
-  
-  .content
-    background: #6a6363 image-url('brown-texture.png')
-
-  .decoration
-    position: absolute
-    background: image-url('corkscrew.png') no-repeat top right
-    width: 500px
-    height: 550px
-    bottom: -25% 
-    left: -18%
 
 #sponsors
   background: #3e614e image-url('grass.jpg')
+
+img.corkscrew
+  left: -5%
+  top: 25%
+  width: 22%
+
+img.wheel
+  right: -5%
+  bottom: -15%
+
+img.shoes
+  bottom: -10%
+  right: 3%
+  width: 35%
+
+img.wiggle
+  top: -2%
+  left: -5%
+  width: 24%
+
+img.knife
+  position: static
+  width: 65%
+  margin-bottom: 1em
+  margin-left: -5%
+
 
 #big-video-wrap
   +opacity(0)
@@ -143,3 +142,30 @@ html.video-loaded
 html.touch
   #home
     background: image-url('fire.jpg')
+
++apply_to(less-than, $iphone5-landscape)
+  
+  h1
+    font-size: 60px
+
+  h2
+    font-size: 38px
+
+  h3
+    font-size: 22px    
+
+  .content
+    width: 100%
+    min-width: 0
+
+  img.shoes
+    bottom: auto
+    top: 2%
+    width: 48%
+
+  img.wheel
+    bottom: auto
+    top: -10%
+
+  img.knife
+    width: 90%
